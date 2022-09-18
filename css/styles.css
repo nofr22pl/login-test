@@ -1,0 +1,59 @@
+body {
+    background-color: black;
+}
+/* Hela containern */
+.container {
+
+    display: flex;
+    justify-content: center;
+    height: 700px;
+    align-items: center;
+
+}
+
+/* Login boxen*/
+.login-form {
+    background-image: linear-gradient(120deg,#3498db,#8e44ad);
+    padding:10px;
+    width: 400px;
+    border-radius: 10px;
+
+    
+
+}
+/* This is a comment in CSS */
+.input-flex {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+/* Justering : Username boxen & Password boxen */
+input[type="text"], 
+[type="password"] {
+    padding: 5px;
+    font-size: 18px;
+    border:solid;
+}
+/* Justering av texten Username & Password*/
+label {
+    flex-basis: 160px; /* gör så textrutorna synkar */
+    margin-top: 10px;
+    font-size: 20px;
+}
+/* Justering : LOGIN knappen*/
+input[type="button"] {
+    width: 100%;
+    font-size: 18px;
+    padding: 5px;
+    margin: 10px 0;
+    border: solid;
+}
+
+/* @media all and (max-width: 480px) {
+    .input-flex {
+        flex-direction: column;
+    }
+    
+}/*
+
+
