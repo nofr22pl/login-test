@@ -23,7 +23,7 @@ body {
 /* Login boxen*/
 .login-form {
   background-color: white;
-    padding: 10px;
+  padding: 10px;
   width: 400px;
   border: solid black;
   border-radius: 10px;
@@ -48,13 +48,27 @@ label {
   font-size: 20px;
 }
 /* Justering : LOGIN knappen*/
-input[type="button"] {
+button[type="button"] {
   width: 100%;
   font-size: 18px;
   padding: 5px;
   margin: 10px 0;
   border: solid;
 }
+
+.rules {
+  font-size:large;
+  border:solid black;
+  color: black;
+  background-color: white;
+  text-align: center;
+  
+}
+.hidden {
+display: none;
+
+}
+
 
 @media all and (max-width: 480px) {
   .input-flex {

@@ -1,26 +1,54 @@
-localStorage.setItem("userName", "Sara"); // Skapar användarnamn i localstorage
-localStorage.setItem("passWord", "qwe123"); // Skapar lösenord i localstorage
 
-let userName = localStorage.getItem("userName"); // Deklarera en varibel
-let passWord = localStorage.getItem("passWord"); // Deklarera en varibel
-console.log(userName);
+let validUserName = "Sara";
+let validPassWord = "qwe123";
 
-function checkData() {
-  // Hämta data från localstorage
 
-  let enterUserName = document.getElementById("userName").value;
-  let enterPassWord = document.getElementById("passWord").value;
+// ----------------------------LOGGA IN------------------------------//
 
-  let getUserName = localStorage.getItem("userName");
-  let getPassWord = localStorage.getItem("passWord");
 
-  if (enterUserName == getUserName && enterPassWord == getPassWord) {
-    // Svarar på Lyckad/Misslyckad inloggning.
+function loggaIn() {
+    let enterUserName = document.getElementById("userName").value;
+    let enterPassWord = document.getElementById("passWord").value;
+  if (enterUserName == validUserName && enterPassWord == validPassWord) {
 
-    {
-      alert("Välkommen till sidan!");
+      localStorage.setItem("userName", "Sara"); // Skapar användarnamn i localstorage
+      localStorage.setItem("passWord", "qwe123"); // Skapar lösenord i localstorage
+      
+    }else {
+        console.log("Errror");
     }
+    checkLocalStorage();
+}
+function loggaUt() {
+    let removeUserName = localStorage.removeItem("userName");
+    let removePassWord = localStorage.removeItem("passWord");
+    checkLocalStorage();
+  }
+function checkLocalStorage() {
+  let getUserName = localStorage.getItem("userName");
+  
+  let getPassWord = localStorage.getItem("passWord");
+  if (getUserName == null) {
+    
+    var elementBtnLogout = document.getElementById("logout");
+    elementBtnLogout.style.display = "none";
+    var elementBtnLogin = document.getElementById("login");
+    elementBtnLogin.style.display = "";
+
+    var elementContainer = document.getElementById("container");
+    elementContainer.style.display = "";
   } else {
-    alert("Användarnamnet eller lösenordet är felaktigt.");
+    
+    var elementBtnLogout = document.getElementById("logout");
+    elementBtnLogout.style.display = "";
+    var elementBtnLogin = document.getElementById("login");
+    elementBtnLogin.style.display = "none";
+
+    var elementContainer = document.getElementById("container");
+    elementContainer.style.display = "none";
   }
 }
+
+//------------------------LOGGA UT---------------------------//
+
+

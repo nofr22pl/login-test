@@ -7,24 +7,34 @@
     <title>LOGIN</title>
   </head>
   <body>
-    <h1>Jotunheim Simhall</h1>
-    <div class="container">
+      <h1 id="rubrik">Jotunheim Simhall</h1>
+    <div id="container" class="container">
       <form action="" class="login-form">
-        <h2>Login Account</h2>
-        <div class="input-flex">
+        <h2 id="changeNamelogin">Login Account</h2>
+        <div id="inputFlex" class="input-flex">
           <label for="">Username:</label>
           <input type="text" name="Username" id="userName" />
         </div>
-        <div class="input-flex">
+        <div id="inputFlex2" class="input-flex">
           <label for="">Password:</label>
           <input type="password" name="Password" id="passWord" />
         </div>
         <div>
-          <input type="button" value="Login" onclick="checkData()" /> <!-- Kopplas till functionen "checkData"-->
+          <button id="login" type="button" value="Login" onclick="loggaIn()">Login</button> <!-- Kopplas till functionen "checkData"-->
+          
         </div>
       </form>
     </div>
+    <div id="regler" class="rules">
+      <p>
+        <b>REGLER:</b><br />
+        Lorem ipsum dolor sit amet consectetur, <br />adipisicing elit.
+        Provident architecto impedit voluptatum reiciendis? Tempora,<br />
+        repudiandae rem minus ipsum omnis soluta perferendis temporibus
+        corrupti, <br />maxime a laudantium corporis voluptas est aut!
+      </p>
+    </div>
+    <button id="logout" style="display: none;" type="button" value="Login" onclick="loggaUt()">Log ut</button>
     <script src="script.js"></script>
   </body>
-  
 </html>
