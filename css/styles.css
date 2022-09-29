@@ -1,5 +1,8 @@
-h1 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+h1 { 
+  /*Rubrik utseende */
+  font-family:Arial, Helvetica, sans-serif;
   text-align: center;
   color: black;
   border: solid black;
@@ -8,9 +11,14 @@ h1 {
 }
 
 body {
-  background-image: url(../aqua.jpg);
-  background-size: cover;
+
+  /* Backgrunds utseende */
+  background-image: url(../vatten.png);
+  background-size:cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+  
 }
 /* Hela containern */
 .container {
@@ -28,7 +36,7 @@ body {
   border: solid black;
   border-radius: 10px;
 }
-/* This is a comment in CSS */
+
 .input-flex {
   display: flex;
   flex-direction: row;
@@ -55,21 +63,40 @@ button[type="button"] {
   margin: 10px 0;
   border: solid;
 }
+/*Justering : LOGGA UT  knappen */
+button[type="logOutButton"] {
+  width: 50%;
+  font-size: 18px;
+  padding: 5px;
+  margin: 10px 0;
+  border: solid;
+  border-radius: 100px ;
+  }
 
-.rules {
-  font-size:large;
-  border:solid black;
+  #loggingOut {
+    text-align: center;
+
+  }
+/* Justering : REGLERNA : i index */
+.regler {
+  display: flex;
+  font-size: large;
+  border: solid black;
   color: black;
   background-color: white;
   text-align: center;
-  
-}
-.hidden {
-display: none;
-
+  justify-content: center;
 }
 
 
+
+
+
+
+
+
+
+/* Till det resposiva med användning utav mindre skärmar */
 @media all and (max-width: 480px) {
   .input-flex {
     flex-direction: column;

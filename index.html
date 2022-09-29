@@ -4,28 +4,29 @@
     <link rel="stylesheet" href="./css/styles.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LOGIN</title>
+    <title>Jotunheum Simhall</title> <!-- Hemsidans titel -->
   </head>
   <body>
-      <h1 id="rubrik">Jotunheim Simhall</h1>
-    <div id="container" class="container">
+    
+      <h1 id="rubrik">Jotunheim Simhall</h1> <!-- Hemsidans Rubrik-->
+    <div id="container" class="container"> <!-- Container för hela inloggningens html/css utseende -->
       <form action="" class="login-form">
-        <h2 id="changeNamelogin">Login Account</h2>
-        <div id="inputFlex" class="input-flex">
-          <label for="">Username:</label>
+        <h2>Logga in</h2> 
+        <div class="input-flex"> <!-- Kopplad till CSS för justering av utseende -->
+          <label for="">Användarnamn:</label>
           <input type="text" name="Username" id="userName" />
         </div>
-        <div id="inputFlex2" class="input-flex">
-          <label for="">Password:</label>
+        <div class="input-flex">
+          <label for="">Lösenord:</label>
           <input type="password" name="Password" id="passWord" />
         </div>
         <div>
-          <button id="login" type="button" value="Login" onclick="loggaIn()">Login</button> <!-- Kopplas till functionen "checkData"-->
+          <button id="login" type="button" value="Login" onclick="loggaIn()">Logga in</button> <!-- LOGGA IN knapp som döljs när du klickat på den genom JavaScript-->
           
         </div>
       </form>
     </div>
-    <div id="regler" class="rules">
+    <div id="regler" class="regler"> <!-- Simhallen REGLER-->
       <p>
         <b>REGLER:</b><br />
         Lorem ipsum dolor sit amet consectetur, <br />adipisicing elit.
@@ -34,7 +35,10 @@
         corrupti, <br />maxime a laudantium corporis voluptas est aut!
       </p>
     </div>
-    <button id="logout" style="display: none;" type="button" value="Login" onclick="loggaUt()">Log ut</button>
+    <div id="loggingOut">
+        <button id="logout" style="display: none;" type="logOutButton" value="Login" onclick="loggaUt()">Logga ut</button> <!-- LOGGA UT knapp som visas efter du klickat på logga in genom JavaScript-->
+    </div>
     <script src="script.js"></script>
-  </body>
+</body>
+
 </html>

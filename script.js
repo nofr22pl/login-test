@@ -1,54 +1,75 @@
 
-let validUserName = "Sara";
-let validPassWord = "qwe123";
-
+// Förvald Användarnamn/Lösenord som ska matcha vid inlogg 
+let validUserName = "Sara";    
+let validPassWord = "qwe123";  
 
 // ----------------------------LOGGA IN------------------------------//
 
 
-function loggaIn() {
-    let enterUserName = document.getElementById("userName").value;
-    let enterPassWord = document.getElementById("passWord").value;
-  if (enterUserName == validUserName && enterPassWord == validPassWord) {
+function loggaIn() { 
+    let enterUserName = document.getElementById("userName").value;  
+    let enterPassWord = document.getElementById("passWord").value;  
+    
+  if (enterUserName == validUserName && enterPassWord == validPassWord) { // Lyckad inloggning vid rätt inmatning
 
-      localStorage.setItem("userName", "Sara"); // Skapar användarnamn i localstorage
-      localStorage.setItem("passWord", "qwe123"); // Skapar lösenord i localstorage
+      localStorage.setItem("userName", "Sara");  // Skapar användarnamn vid inlogg
+      localStorage.setItem("passWord", "qwe123"); // Skapar lösenord vid inlogg
+      
+      rubrik.innerHTML = 'Välkommen till Jotunheims Simhall'; // Byter Rubirk vid inlogg
       
     }else {
-        console.log("Errror");
+        alert("Fel användarnamn eller lösenord, försök igen!!") // Visa felmeddelande vid fel inmatning.
     }
-    checkLocalStorage();
+    checkLocalStorage(); // Kolla om användare är Inloggad/Utloggad
 }
-function loggaUt() {
-    let removeUserName = localStorage.removeItem("userName");
-    let removePassWord = localStorage.removeItem("passWord");
-    checkLocalStorage();
-  }
-function checkLocalStorage() {
-  let getUserName = localStorage.getItem("userName");
-  
-  let getPassWord = localStorage.getItem("passWord");
-  if (getUserName == null) {
-    
-    var elementBtnLogout = document.getElementById("logout");
-    elementBtnLogout.style.display = "none";
-    var elementBtnLogin = document.getElementById("login");
-    elementBtnLogin.style.display = "";
 
-    var elementContainer = document.getElementById("container");
-    elementContainer.style.display = "";
+// ----------------------------LOGGA UT------------------------------//
+
+
+function loggaUt() { 
+    let removeUserName = localStorage.removeItem("userName"); // Plockar bort Användarnamn vid utlogg
+    let removePassWord = localStorage.removeItem("passWord"); // Plockar bort Lösenord vid utlogg
+    
+    checkLocalStorage(); // Kolla om användare är Inloggad/Utloggad
+  }
+
+
+
+
+function checkLocalStorage() { // Hämtar data För att kunna se om användaren är Inloggad/Utloggad
+  let getUserName = localStorage.getItem("userName");
+  let getPassWord = localStorage.getItem("passWord");
+
+  if (getUserName == null) { // Värdet null representerar den avsiktliga frånvaron av något objektvärde
+    rubrik.innerHTML = 'Jotunheim Simhall';
+    let elementBtnLogout = document.getElementById("logout");
+    elementBtnLogout.style.display = "none"; // Gömma knapp
+    let elementBtnLogin = document.getElementById("login");
+    elementBtnLogin.style.display = ""; // Vissa Knapp
+
+    let elementContainer = document.getElementById("container");
+    elementContainer.style.display = ""; // Visa hela container
+
+    let elementRegler = document.getElementById("regler");
+    elementRegler.style.display = ""; // Visa REGLER: Texten
+
   } else {
     
-    var elementBtnLogout = document.getElementById("logout");
-    elementBtnLogout.style.display = "";
-    var elementBtnLogin = document.getElementById("login");
-    elementBtnLogin.style.display = "none";
+    let elementBtnLogout = document.getElementById("logout");
+    elementBtnLogout.style.display = ""; // Visa Knapp
+    let elementBtnLogin = document.getElementById("login");
+    elementBtnLogin.style.display = "none"; // Gömma Knapp
 
-    var elementContainer = document.getElementById("container");
-    elementContainer.style.display = "none";
+    let elementContainer = document.getElementById("container");
+    elementContainer.style.display = "none"; // Göm hela containern
+
+    let elementRegler = document.getElementById("regler");
+    elementRegler.style.display = "none"; // Göm REGLER: Texten
   }
 }
 
-//------------------------LOGGA UT---------------------------//
+
+// "style" för att komma åt CSS genomn JavaScript//
+// display = "none" för att dölja , display = "" för att visa 
 
 
