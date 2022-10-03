@@ -1,4 +1,4 @@
-checkLocalStorage(); // Anropar funtionen
+checkLocalStorage(); // Anropar funtionen så man förbli inloggad tills man trycker "logga ut"
 
 
 
@@ -48,6 +48,8 @@ function checkLocalStorage() { // Hämtar data För att kunna se om användaren 
     
     let elementBtnLogin = document.getElementById("login");  // Hämta id från logga in button
     elementBtnLogin.style.display = ""; // Vissa Knapp
+    let elementBtnLogout = document.getElementById("logout"); // Hämta id från logga ut button
+    elementBtnLogout.style.display = "none";
 
     let elementContainer = document.getElementById("container");  // Hämta id från container
     elementContainer.style.display = ""; // Visa hela container
