@@ -1,7 +1,7 @@
 
 
 h1 { 
-  /*Rubrik utseende */
+ 
   font-family:Arial, Helvetica, sans-serif;
   text-align: center;
   color: black;
@@ -12,7 +12,7 @@ h1 {
 
 body {
 
-  /* Backgrunds utseende */
+  
   background-image: url(../vatten.png);
   background-size:cover;
   background-repeat: no-repeat;
@@ -20,7 +20,7 @@ body {
   
   
 }
-/* Hela containern */
+
 .container {
   display: flex;
   justify-content: center;
@@ -28,7 +28,7 @@ body {
   align-items: center;
 }
 
-/* Login boxen*/
+
 .login-form {
   background-color: white;
   padding: 10px;
@@ -42,20 +42,20 @@ body {
   flex-direction: row;
   margin-bottom: 10px;
 }
-/* Justering : Username boxen & Password boxen */
+
 input[type="text"],
 [type="password"] {
   padding: 5px;
   font-size: 18px;
   border: solid;
 }
-/* Justering av texten Username & Password*/
+
 label {
   flex-basis: 160px; /* gör så textrutorna synkar */
   margin-top: 10px;
   font-size: 20px;
 }
-/* Justering : LOGIN knappen*/
+
 button[type="button"] {
   width: 100%;
   font-size: 18px;
@@ -63,7 +63,7 @@ button[type="button"] {
   margin: 10px 0;
   border: solid;
 }
-/*Justering : LOGGA UT  knappen */
+
 button[type="logOutButton"] {
   width: 50%;
   font-size: 18px;
@@ -77,7 +77,7 @@ button[type="logOutButton"] {
     text-align: center;
 
   }
-/* Justering : REGLERNA : i index */
+
 .regler {
   display: flex;
   font-size: large;
@@ -88,7 +88,7 @@ button[type="logOutButton"] {
   justify-content: center;
 }
 
-/* Justering : Fonts  */
+
 .emblem {
 display: flex;
 justify-content: center;
@@ -103,7 +103,7 @@ margin: 4px;
 
 
 
-/* Till det resposiva med användning utav mindre skärmar */
+
 @media all and (max-width: 480px) {
   .input-flex {
     flex-direction: column;
