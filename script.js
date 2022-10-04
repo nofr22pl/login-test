@@ -1,79 +1,77 @@
-checkLocalStorage(); // Anropar funtionen så man förbli inloggad tills man trycker "logga ut"
+checkLocalStorage(); 
 
 
 
-// Förvald Användarnamn/Lösenord som ska matcha vid inlogg 
+ 
 const validUserName = "Sara";    
 const validPassWord = "qwe123";  
 
-// ----------------------------LOGGA IN------------------------------//
+
 
 
 function loggaIn() { 
-    let enterUserName = document.getElementById("userName").value;   // Hämta id från username input
-    let enterPassWord = document.getElementById("passWord").value;   // Hämta id från password input
+    let enterUserName = document.getElementById("userName").value;   
+    let enterPassWord = document.getElementById("passWord").value;   
     
-  if (enterUserName == validUserName && enterPassWord == validPassWord) { // Lyckad inloggning vid rätt inmatning
+  if (enterUserName == validUserName && enterPassWord == validPassWord) { 
 
-      localStorage.setItem("userName", "Sara");  // Skapar användarnamn vid inlogg
-      localStorage.setItem("passWord", "qwe123"); // Skapar lösenord vid inlogg
+      localStorage.setItem("userName", "Sara");  
+      localStorage.setItem("passWord", "qwe123"); 
 
     }else {
         
-        alert("Fel användarnamn eller lösenord, försök igen!!") // Visa felmeddelande vid fel inmatning.
+        alert("Fel användarnamn eller lösenord, försök igen!!") 
     }
-    checkLocalStorage(); // Anropar functionen
+    checkLocalStorage(); 
 }
 
-// ----------------------------LOGGA UT------------------------------//
+
 
 
 function loggaUt() { 
-    let removeUserName = localStorage.removeItem("userName"); // Plockar bort Användarnamn vid utlogg
-    let removePassWord = localStorage.removeItem("passWord"); // Plockar bort Lösenord vid utlogg
+    let removeUserName = localStorage.removeItem("userName"); 
+    let removePassWord = localStorage.removeItem("passWord");
     
-    checkLocalStorage(); // Anropar functionen
+    checkLocalStorage(); 
   }
 
 
 
   
-function checkLocalStorage() { // Hämtar data För att kunna se om användaren är Inloggad/Utloggad
+function checkLocalStorage() { 
   let getUserName = localStorage.getItem("userName");
   let getPassWord = localStorage.getItem("passWord");
 
-  if (getUserName == null) { // Värdet null representerar den avsiktliga frånvaron av något objektvärde
+  if (getUserName == null) { 
     
-    rubrik.innerHTML = 'Jotunheim Simsällskap'; // Behåll rubriken
+    rubrik.innerHTML = 'Jotunheim Simsällskap'; 
     
-    let elementBtnLogin = document.getElementById("login");  // Hämta id från logga in button
+    let elementBtnLogin = document.getElementById("login"); 
     elementBtnLogin.style.display = ""; // Vissa Knapp
-    let elementBtnLogout = document.getElementById("logout"); // Hämta id från logga ut button
+    let elementBtnLogout = document.getElementById("logout"); 
     elementBtnLogout.style.display = "none";
 
-    let elementContainer = document.getElementById("container");  // Hämta id från container
-    elementContainer.style.display = ""; // Visa hela container
+    let elementContainer = document.getElementById("container");  
+    elementContainer.style.display = ""; 
 
-    let elementRegler = document.getElementById("regler");  // Hämta id från regler text
-    elementRegler.style.display = ""; // Visa REGLER: Texten
+    let elementRegler = document.getElementById("regler");  
+    elementRegler.style.display = "";
 
   } else {
 
     rubrik.innerHTML = 'Välkommen till Jotunheims Simsällskap!';
-    let elementBtnLogout = document.getElementById("logout"); // Hämta id från logga ut button
-    elementBtnLogout.style.display = ""; // Visa Knapp
+    let elementBtnLogout = document.getElementById("logout"); 
+    elementBtnLogout.style.display = ""; 
     
 
-    let elementContainer = document.getElementById("container");  // Hämta id från containern 
-    elementContainer.style.display = "none"; // Göm hela containern
+    let elementContainer = document.getElementById("container");  
+    elementContainer.style.display = "none"; 
 
-    let elementRegler = document.getElementById("regler");  // Hämta id från regler text
-    elementRegler.style.display = "none"; // Göm REGLER: Texten
+    let elementRegler = document.getElementById("regler");  
+    elementRegler.style.display = "none"; 
   }
 }
 
 
-// "style" för att komma åt CSS genomn JavaScript//
-// display = "none" för att dölja , display = "" för att visa 
-// "checkLocalStorage()" anropar functionen | function checkLocalStorage() |
+
 
