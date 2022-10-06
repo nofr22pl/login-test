@@ -1,77 +1,52 @@
-checkLocalStorage(); 
+const validUserName = "sara";
+const validPassWord = "qwe123";
 
+const enterUserName = document.getElementById("userName");
+const enterPassWord = document.getElementById("passWord");
 
+const elementBtnLogin = document.getElementById("login");
+const elementBtnLogout = document.getElementById("logout");
 
- 
-const validUserName = "Sara";    
-const validPassWord = "qwe123";  
+const elementRegler = document.getElementById("regler");
+const elementContainer = document.getElementById("container");
 
-
-
-
-function loggaIn() { 
-    let enterUserName = document.getElementById("userName").value;   
-    let enterPassWord = document.getElementById("passWord").value;   
-    
-  if (enterUserName == validUserName && enterPassWord == validPassWord) { 
-
-      localStorage.setItem("userName", "Sara");  
-      localStorage.setItem("passWord", "qwe123"); 
-
-    }else {
-        
-        alert("Fel användarnamn eller lösenord, försök igen!!") 
-    }
-    checkLocalStorage(); 
-}
-
-
-
-
-function loggaUt() { 
-    let removeUserName = localStorage.removeItem("userName"); 
-    let removePassWord = localStorage.removeItem("passWord");
-    
-    checkLocalStorage(); 
-  }
-
-
-
-  
-function checkLocalStorage() { 
-  let getUserName = localStorage.getItem("userName");
-  let getPassWord = localStorage.getItem("passWord");
-
-  if (getUserName == null) { 
-    
-    rubrik.innerHTML = 'Jotunheim Simsällskap'; 
-    
-    let elementBtnLogin = document.getElementById("login"); 
-    elementBtnLogin.style.display = ""; // Vissa Knapp
-    let elementBtnLogout = document.getElementById("logout"); 
-    elementBtnLogout.style.display = "none";
-
-    let elementContainer = document.getElementById("container");  
-    elementContainer.style.display = ""; 
-
-    let elementRegler = document.getElementById("regler");  
-    elementRegler.style.display = "";
-
+function loggaIn() {
+  if (
+    validUserName == enterUserName.value.toLowerCase() &&
+    validPassWord == enterPassWord.value
+  ) {
+    localStorage.setItem("userName", validUserName);
+    localStorage.setItem("passWord", validPassWord);
   } else {
+    alert("Fel användarnamn eller lösenord, försök igen!!");
+  }
+  render();
+}
 
-    rubrik.innerHTML = 'Välkommen till Jotunheims Simsällskap!';
-    let elementBtnLogout = document.getElementById("logout"); 
-    elementBtnLogout.style.display = ""; 
-    
+function loggaUt() {
+  localStorage.removeItem("userName");
+  localStorage.removeItem("passWord");
 
-    let elementContainer = document.getElementById("container");  
-    elementContainer.style.display = "none"; 
+  render();
+}
 
-    let elementRegler = document.getElementById("regler");  
-    elementRegler.style.display = "none"; 
+function render() {
+  let getUserName = localStorage.getItem("userName");
+
+  if (getUserName == null) {
+    rubrik.innerHTML = "Jotunheim Simsällskap";
+
+    elementBtnLogin.style.display = ""; // Vissa Knapp
+    elementBtnLogout.style.display = "none";
+    elementContainer.style.display = "";
+    elementRegler.style.display = "";
+  } else {
+    rubrik.innerHTML = "Välkommen till Jotunheims Simsällskap!";
+
+    elementBtnLogout.style.display = "";
+    elementContainer.style.display = "none";
+    elementRegler.style.display = "none";
   }
 }
 
-
-
-
+render();
